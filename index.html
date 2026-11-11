@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixAll 360 Services | 24/7 Roadside Assistance & Mechanics Secunda</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#e60000',
+                            redhover: '#cc0000',
+                            dark: '#0e0e11',
+                            card: '#16161c',
+                            border: '#2a2a35'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Carbon Hexagon Background Pattern */
+        .bg-hex-pattern {
+            background-color: #0c0c0f;
+            background-image:
+                radial-gradient(circle at 50% 50%, rgba(230, 0, 0, 0.12) 0%, transparent 60%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cpath fill='%23191922' fill-opacity='0.4' d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l11 6.35 11-6.35V17.9L14 11.55 3 17.9z'/%3E%3C/svg%3E");
+        }
+
+        .red-glow {
+            box-shadow: 0 0 25px rgba(230, 0, 0, 0.45);
+        }
+
+        .red-text-glow {
+            text-shadow: 0 0 12px rgba(230, 0, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-brand-dark text-gray-100 font-sans selection:bg-brand-red selection:text-white antialiased">
+
+    <!-- 24/7 Top Bar Notice -->
+    <div class="bg-brand-red text-white py-2 px-4 text-center font-bold text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2 shadow-md">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+        <span>24/7 EMERGENCY BREAKDOWN & ROADSIDE ASSISTANCE — WE COME TO YOU!</span>
+    </div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img
+                    src="logo.png"
+                    alt="FixAll 360 Services Logo"
+                    class="w-14 h-14 sm:w-16 sm:h-16 object-contain filter drop-shadow-[0_4px_10px_rgba(230,0,0,0.5)] group-hover:scale-105 transition-transform duration-300"
+                >
+
+                <div class="hidden sm:block">
+                    <span class="text-2xl font-black tracking-wider uppercase text-white block leading-none">
+                        FixAll <span class="text-brand-red">360</span>
+                    </span>
+                    <span class="text-[10px] tracking-widest text-gray-400 font-semibold uppercase">
+                        Services • Car • Truck • Tractor
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#services" class="hover:text-brand-red transition-colors">Services</a>
+                <a href="#vehicles" class="hover:text-brand-red transition-colors">Vehicles Served</a>
+                <a href="#coverage" class="hover:text-brand-red transition-colors">Service Area</a>
+                <a href="#about" class="hover:text-brand-red transition-colors">Why Choose Us</a>
+                <a href="#contact" class="hover:text-brand-red transition-colors">Contact</a>
+            </nav>
+
+            <!-- Emergency Phone Direct CTA Header -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="tel:0665026864" class="flex items-center gap-2 bg-brand-card border border-brand-border hover:border-brand-red px-3 py-2 rounded-lg transition-all text-xs">
+                    <i class="fa-solid fa-phone text-brand-red"></i>
+                    <div>
+                        <span class="block text-[10px] text-gray-400 font-medium">Christopher</span>
+                        <span class="font-bold text-white">066 502 6864</span>
+                    </div>
+                </a>
+
+                <a href="tel:0607719755" class="flex items-center gap-2 bg-brand-card border border-brand-border hover:border-brand-red px-3 py-2 rounded-lg transition-all text-xs">
+                    <i class="fa-solid fa-phone text-brand-red"></i>
+                    <div>
+                        <span class="block text-[10px] text-gray-400 font-medium">Rudi</span>
+                        <span class="font-bold text-white">060 771 9755</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button
+                id="mobile-menu-btn"
+                class="md:hidden text-gray-300 hover:text-white text-2xl focus:outline-none"
+                aria-label="Toggle Navigation"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-3 pb-6 space-y-4">
+            <a href="#services" class="block text-gray-300 hover:text-brand-red font-medium" onclick="toggleMobileMenu()">Services</a>
+            <a href="#vehicles" class="block text-gray-300 hover:text-brand-red font-medium" onclick="toggleMobileMenu()">Vehicles Served</a>
+            <a href="#coverage" class="block text-gray-300 hover:text-brand-red font-medium" onclick="toggleMobileMenu()">Service Area</a>
+            <a href="#about" class="block text-gray-300 hover:text-brand-red font-medium" onclick="toggleMobileMenu()">Why Choose Us</a>
+            <a href="#contact" class="block text-gray-300 hover:text-brand-red font-medium" onclick="toggleMobileMenu()">Contact Us</a>
+
+            <div class="pt-4 border-t border-brand-border grid grid-cols-1 gap-3">
+                <a href="tel:0665026864" class="w-full text-center bg-brand-red text-white py-2.5 rounded-lg font-bold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call Christopher: 066 502 6864
+                </a>
+
+                <a href="tel:0607719755" class="w-full text-center bg-zinc-800 text-white py-2.5 rounded-lg font-bold border border-brand-border flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone text-brand-red"></i> Call Rudi: 060 771 9755
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-hex-pattern py-16 lg:py-24 overflow-hidden border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs sm:text-sm font-semibold mb-6">
+                        <i class="fa-solid fa-truck-pickup"></i>
+                        Fast Response • Reliable • Quality Work
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight mb-4">
+                        Truck Breakdown? <br>
+                        <span class="text-brand-red red-text-glow">We Come To You 24/7</span>
+                    </h1>
+
+                    <p class="text-gray-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Professional Mechanical & Auto Electrical Repairs, Computer Diagnostics, On-Site Servicing & Roadside Call-outs for
+                        <strong class="text-white">Cars, Trucks, Tractors & Heavy Machinery</strong>
+                        across Secunda, Platteland & Surrounding Farms.
+                    </p>
+
+                    <!-- Urgent CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+                        <a href="tel:0665026864" class="bg-brand-red hover:bg-brand-redhover text-white font-extrabold text-lg px-6 py-4 rounded-xl red-glow transition-all flex items-center justify-center gap-3 group">
+                            <i class="fa-solid fa-phone text-xl group-hover:rotate-12 transition-transform"></i>
+                            <span>Call Christopher (066 502 6864)</span>
+                        </a>
+
+                        <a href="tel:0607719755" class="bg-brand-card hover:bg-zinc-800 text-white border-2 border-brand-red font-extrabold text-lg px-6 py-4 rounded-xl transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-phone text-brand-red text-xl"></i>
+                            <span>Call Rudi (060 771 9755)</span>
+                        </a>
+                    </div>
+
+                    <!-- Coverage Quick Highlights -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-gray-400">
+                        <span class="flex items-center gap-2 bg-brand-card px-3 py-1.5 rounded-md border border-brand-border">
+                            <i class="fa-solid fa-location-dot text-brand-red"></i> Secunda
+                        </span>
+
+                        <span class="flex items-center gap-2 bg-brand-card px-3 py-1.5 rounded-md border border-brand-border">
+                            <i class="fa-solid fa-tractor text-brand-red"></i> Farms & Platteland
+                        </span>
+
+                        <span class="flex items-center gap-2 bg-brand-card px-3 py-1.5 rounded-md border border-brand-border">
+                            <i class="fa-solid fa-clock text-brand-red"></i> 24/7 Emergency Call-outs
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Hero Right Feature Banner / Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-brand-card rounded-2xl p-6 sm:p-8 border-2 border-brand-red/50 shadow-2xl">
+                        <div class="absolute -top-4 -right-4 bg-brand-red text-white text-xs font-black uppercase px-4 py-1.5 rounded-full shadow-lg">
+                            24/7 Available
+                        </div>
+
+                        <div class="text-center mb-6">
+                            <!-- Large Logo Image -->
+                            <img
+                                src="logo.png"
+                                alt="FixAll 360 Services Logo"
+                                class="w-32 h-32 mx-auto mb-3 object-contain filter drop-shadow-[0_0_20px_rgba(230,0,0,0.6)]"
+                            >
+
+                            <h3 class="text-2xl font-black uppercase tracking-wide">FIXALL 360 SERVICES</h3>
+                            <p class="text-xs text-gray-400">Complete Auto Electrical & Mechanical Experts</p>
+                        </div>
+
+                        <div class="space-y-4 text-sm font-medium">
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-brand-dark border border-brand-border">
+                                <i class="fa-solid fa-circle-check text-brand-red text-lg"></i>
+                                <span>Truck & Heavy Duty Breakdown Specialists</span>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-brand-dark border border-brand-border">
+                                <i class="fa-solid fa-circle-check text-brand-red text-lg"></i>
+                                <span>Full Computer Scanning & Fault Code Clearing</span>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-brand-dark border border-brand-border">
+                                <i class="fa-solid fa-circle-check text-brand-red text-lg"></i>
+                                <span>On-Site Farm & Platteland Repairs</span>
+                            </div>
+
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-brand-dark border border-brand-border">
+                                <i class="fa-solid fa-circle-check text-brand-red text-lg"></i>
+                                <span>Towing & Mobile Roadside Support</span>
+                            </div>
+                        </div>
+
+                        <!-- Direct WhatsApp Trigger -->
+                        <div class="mt-6 pt-6 border-t border-brand-border">
+                            <a href="https://wa.me/27665026864?text=Hi%20FixAll%20360,%20I%20need%20assistance%20with%20my%20vehicle" target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                Chat on WhatsApp Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="services" class="py-20 bg-brand-dark border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-brand-red mb-2">Our Capabilities</h2>
+                <h3 class="text-3xl sm:text-4xl font-black uppercase text-white">Full-Service Auto & Heavy Vehicle Solutions</h3>
+                <p class="text-gray-400 mt-3 text-sm sm:text-base">
+                    We provide end-to-end mechanical, electrical, diagnostic, and roadside emergency assistance.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service 1: Vehicle Diagnostics -->
+                <div class="bg-brand-card border border-brand-border hover:border-brand-red rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-red/10 border border-brand-red/30 rounded-xl flex items-center justify-center text-brand-red text-2xl mb-5">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white uppercase mb-3">Vehicle Diagnostics</h4>
+
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Full-system diagnostics</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Computer scanning & live data</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Fault-code reading & clearing</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Mechanical & Electrical Repairs -->
+                <div class="bg-brand-card border border-brand-border hover:border-brand-red rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-red/10 border border-brand-red/30 rounded-xl flex items-center justify-center text-brand-red text-2xl mb-5">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white uppercase mb-3">Mechanical & Electrical Repairs</h4>
+
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Engine & mechanical repairs</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Electrical fault finding & wiring</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Quality component replacement</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Car Servicing & Maintenance -->
+                <div class="bg-brand-card border border-brand-border hover:border-brand-red rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-red/10 border border-brand-red/30 rounded-xl flex items-center justify-center text-brand-red text-2xl mb-5">
+                        <i class="fa-solid fa-oil-can"></i>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white uppercase mb-3">Servicing & Maintenance</h4>
+
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Engine oil & filter changes</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Comprehensive fluid level checks</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Air/Fuel filter & spark plug service</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Performance & Modifications -->
+                <div class="bg-brand-card border border-brand-border hover:border-brand-red rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-red/10 border border-brand-red/30 rounded-xl flex items-center justify-center text-brand-red text-2xl mb-5">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white uppercase mb-3">Performance & Mods</h4>
+
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Sound system installation & tuning</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Custom exhaust modifications</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Tailored custom vehicle mods</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5: Towing & Roadside Assistance -->
+                <div class="bg-brand-card border-2 border-brand-red/70 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-lg relative overflow-hidden">
+                    <div class="absolute -right-8 -top-8 w-24 h-24 bg-brand-red/20 rounded-full blur-xl"></div>
+
+                    <div class="w-14 h-14 bg-brand-red text-white rounded-xl flex items-center justify-center text-2xl mb-5 red-glow">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white uppercase mb-3">Towing & 24/7 Roadside</h4>
+
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Emergency vehicle towing</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Mobile breakdown response</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> On-site call-outs 24 hours / 7 days</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6: Truck & Heavy Duty Machinery -->
+                <div class="bg-brand-card border border-brand-border hover:border-brand-red rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brand-red/10 border border-brand-red/30 rounded-xl flex items-center justify-center text-brand-red text-2xl mb-5">
+                        <i class="fa-solid fa-tractor"></i>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-white uppercase mb-3">Heavy Duty & Tractors</h4>
+
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Commercial truck repairs</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Agricultural tractor maintenance</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-chevron-right text-brand-red text-xs"></i> Platteland on-farm repair services</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Vehicles Section -->
+    <section id="vehicles" class="py-16 bg-hex-pattern border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black uppercase tracking-wide text-white">Vehicles We Work On</h2>
+                <div class="w-16 h-1 bg-brand-red mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                <!-- Cars -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-red transition-all">
+                    <i class="fa-solid fa-car text-4xl text-brand-red mb-3"></i>
+                    <h3 class="font-bold text-lg uppercase text-white">Passenger Cars</h3>
+                    <p class="text-xs text-gray-400 mt-1">Sedans, SUVs & Hatchbacks</p>
+                </div>
+
+                <!-- Light Commercial -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-red transition-all">
+                    <i class="fa-solid fa-van-shuttle text-4xl text-brand-red mb-3"></i>
+                    <h3 class="font-bold text-lg uppercase text-white">Bakkies & Vans</h3>
+                    <p class="text-xs text-gray-400 mt-1">Light Commercial Fleet</p>
+                </div>
+
+                <!-- Trucks -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-red transition-all">
+                    <i class="fa-solid fa-truck-moving text-4xl text-brand-red mb-3"></i>
+                    <h3 class="font-bold text-lg uppercase text-white">Heavy Duty Trucks</h3>
+                    <p class="text-xs text-gray-400 mt-1">Long-haul & Fleet Trucks</p>
+                </div>
+
+                <!-- Tractors -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 text-center hover:border-brand-red transition-all">
+                    <i class="fa-solid fa-tractor text-4xl text-brand-red mb-3"></i>
+                    <h3 class="font-bold text-lg uppercase text-white">Tractors & Farming</h3>
+                    <p class="text-xs text-gray-400 mt-1">Agricultural & Farm Machinery</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Coverage Section -->
+    <section id="coverage" class="py-16 bg-brand-dark border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-card via-zinc-900 to-brand-card border-2 border-brand-red/40 rounded-3xl p-8 lg:p-12 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                    <div>
+                        <span class="text-brand-red text-xs font-black uppercase tracking-widest block mb-2">Service Area & Radius</span>
+
+                        <h2 class="text-3xl sm:text-4xl font-black uppercase text-white mb-4">
+                            Secunda, Surrounding Areas, Farms & Platteland
+                        </h2>
+
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
+                            Stranded on the highway, broken down on a farm gravel road, or in need of on-site truck diagnostics? We bring full mechanical and electrical capabilities directly to your location 24 hours a day, 7 days a week.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 rounded-lg bg-brand-dark border border-brand-border text-sm font-semibold text-white">
+                                <i class="fa-solid fa-location-crosshairs text-brand-red mr-2"></i>Secunda Central
+                            </span>
+
+                            <span class="px-4 py-2 rounded-lg bg-brand-dark border border-brand-border text-sm font-semibold text-white">
+                                <i class="fa-solid fa-wheat-awn text-brand-red mr-2"></i>Platteland Farms
+                            </span>
+
+                            <span class="px-4 py-2 rounded-lg bg-brand-dark border border-brand-border text-sm font-semibold text-white">
+                                <i class="fa-solid fa-road text-brand-red mr-2"></i>Regional Highways
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Instant Dispatch Contact Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                        <div class="bg-brand-dark border border-brand-border rounded-xl p-5 text-center">
+                            <div class="w-12 h-12 bg-brand-red/20 text-brand-red rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+                                <i class="fa-solid fa-user-gear"></i>
+                            </div>
+
+                            <h3 class="font-bold text-white text-base">Christopher</h3>
+
+                            <a href="tel:0665026864" class="block text-brand-red font-black text-lg mt-1 hover:underline">
+                                066 502 6864
+                            </a>
+
+                            <a href="https://wa.me/27665026864" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp Christopher
+                            </a>
+                        </div>
+
+                        <div class="bg-brand-dark border border-brand-border rounded-xl p-5 text-center">
+                            <div class="w-12 h-12 bg-brand-red/20 text-brand-red rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+                                <i class="fa-solid fa-user-gear"></i>
+                            </div>
+
+                            <h3 class="font-bold text-white text-base">Rudi</h3>
+
+                            <a href="tel:0607719755" class="block text-brand-red font-black text-lg mt-1 hover:underline">
+                                060 771 9755
+                            </a>
+
+                            <a href="https://wa.me/270607719755" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp Rudi
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Value Proposition -->
+    <section id="about" class="py-16 bg-brand-dark border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-black uppercase text-white">Why FixAll 360 Services?</h2>
+                <p class="text-gray-400 text-sm mt-2">
+                    Built on reliability, high quality workmanship, and fast emergency response.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i class="fa-solid fa-shield-halved text-4xl text-brand-red mb-4"></i>
+                    <h3 class="text-lg font-bold text-white uppercase mb-2">Reliable & Professional</h3>
+                    <p class="text-gray-400 text-sm">
+                        We take pride in accurate fault diagnosis and long-lasting mechanical and electrical repairs.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i class="fa-solid fa-clock text-4xl text-brand-red mb-4"></i>
+                    <h3 class="text-lg font-bold text-white uppercase mb-2">24/7 Availability</h3>
+                    <p class="text-gray-400 text-sm">
+                        Vehicle breakdowns don't follow office hours. Our emergency call-out team is ready day and night.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i class="fa-solid fa-truck-fast text-4xl text-brand-red mb-4"></i>
+                    <h3 class="text-lg font-bold text-white uppercase mb-2">Mobile Repair Service</h3>
+                    <p class="text-gray-400 text-sm">
+                        Equipped mobile units to resolve breakdown issues right on-site at your farm, road, or depot.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Call-to-Action Footer Section -->
+    <footer id="contact" class="bg-black pt-16 pb-12 border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-zinc-800">
+
+                <!-- Brand Overview -->
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img
+                            src="logo.png"
+                            alt="FixAll 360 Services Logo"
+                            class="w-12 h-12 object-contain filter drop-shadow-[0_2px_8px_rgba(230,0,0,0.5)]"
+                        >
+
+                        <span class="text-2xl font-black text-white tracking-wider uppercase">
+                            FIXALL <span class="text-brand-red">360</span>
+                        </span>
+                    </div>
+
+                    <p class="text-gray-400 text-sm mb-6 max-w-sm">
+                        Professional car, truck, and tractor mechanic services, auto electrical work, computer diagnostics, and 24/7 emergency roadside assistance.
+                    </p>
+
+                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">
+                        We Keep You Moving!
+                    </div>
+                </div>
+
+                <!-- Direct Contacts -->
+                <div class="md:col-span-4">
+                    <h3 class="text-white font-bold uppercase tracking-wider mb-4 text-sm border-l-2 border-brand-red pl-3">
+                        Direct Phone Support
+                    </h3>
+
+                    <ul class="space-y-4">
+                        <li>
+                            <span class="text-xs text-gray-400 block">Christopher</span>
+                            <a href="tel:0665026864" class="text-xl font-black text-white hover:text-brand-red transition-colors">
+                                066 502 6864
+                            </a>
+                        </li>
+
+                        <li>
+                            <span class="text-xs text-gray-400 block">Rudi</span>
+                            <a href="tel:0607719755" class="text-xl font-black text-white hover:text-brand-red transition-colors">
+                                060 771 9755
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Location & Service Areas -->
+                <div class="md:col-span-3">
+                    <h3 class="text-white font-bold uppercase tracking-wider mb-4 text-sm border-l-2 border-brand-red pl-3">
+                        Coverage Region
+                    </h3>
+
+                    <p class="text-gray-300 text-sm leading-relaxed mb-3">
+                        <i class="fa-solid fa-location-dot text-brand-red mr-2"></i>
+                        Secunda and Surrounding Areas
+                    </p>
+
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        <i class="fa-solid fa-tractor text-brand-red mr-2"></i>
+                        Farms & Platteland Regions
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Website Credit -->
+            <div class="pt-8 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+                    <p>&copy; 2026 FixAll 360 Services. All Rights Reserved.</p>
+                    <span class="hidden sm:inline text-gray-700">|</span>
+                    <p class="text-gray-400">
+                        Made by <span class="text-white font-bold">RSP Interactive</span>
+                    </p>
+                </div>
+
+                <p class="text-gray-400">
+                    Reliable • Professional • Trusted • 24/7 Support
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Quick Action Bar for Mobile Screens -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-brand-dark/95 border-t border-brand-border p-3 z-50 flex gap-2 backdrop-blur-md">
+
+        <a href="tel:0665026864" class="flex-1 bg-brand-red text-white py-2.5 rounded-lg text-center font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg">
+            <i class="fa-solid fa-phone"></i>
+            Call Christopher
+        </a>
+
+        <a href="tel:0607719755" class="flex-1 bg-zinc-800 text-white border border-brand-border py-2.5 rounded-lg text-center font-bold text-xs flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-phone text-brand-red"></i>
+            Call Rudi
+        </a>
+
+    </div>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-btn');
+            const isHidden = menu.classList.toggle('hidden');
+
+            button.setAttribute('aria-expanded', String(!isHidden));
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+    </script>
+
+</body>
+</html>
